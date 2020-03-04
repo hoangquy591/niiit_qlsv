@@ -15,7 +15,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleEnt extends BaseEnt {
+public class RoleEnt {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "role_code")
     private String code;
@@ -28,7 +32,6 @@ public class RoleEnt extends BaseEnt {
     @ToString.Exclude
     private List<UserEnt> users;
 
-    @Override
     public RoleDto getAsDto() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setAmbiguityIgnored(true);

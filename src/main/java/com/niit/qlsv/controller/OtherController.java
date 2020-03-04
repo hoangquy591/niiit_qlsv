@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class OtherController {
 
-    @GetMapping("/admin")
+    @GetMapping("/admin/hello")
     public String adminRestController() {
         return "Welcome to the admin house !";
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/hello")
     public String userRestController() {
         return "Welcome user !";
     }
